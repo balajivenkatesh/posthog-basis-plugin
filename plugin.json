@@ -6,7 +6,7 @@
   "posthogVersion": ">= 1.25.0",
   "config": [
     {
-      "key": "webhook_url",
+      "key": "webhookUrl",
       "name": "Patterns Webhook URL",
       "type": "string",
       "required": true
