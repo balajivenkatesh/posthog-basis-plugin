@@ -2,7 +2,7 @@
   "name": "Patterns App",
   "url": "<TODO: Your Plugin URL here>",
   "description": "Send events data to Patterns App",
-  "main": "index.js",
+  "main": "index.ts",
   "posthogVersion": ">= 1.25.0",
   "config": [
     {
