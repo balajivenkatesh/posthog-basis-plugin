@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "@posthog/plugin-scaffold": "^1.2.0",
+    "@types/node": "^18.0.3"
+  }
+}
