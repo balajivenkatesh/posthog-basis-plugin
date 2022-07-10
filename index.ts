@@ -13,5 +13,5 @@ export async function processEvent(
   console.log("Processing event...");
   console.log("Sending to Patterns webhook...");
   console.log("Success...");
-  return event;
+  console.log({ event });
 }
