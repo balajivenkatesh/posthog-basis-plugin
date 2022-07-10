@@ -6,12 +6,11 @@ export async function setupPlugin({ config }: PluginMeta<PluginInput>) {
 }
 
 // Plugin method that processes event
-export async function processEvent(
+export async function onEvent(
   event: PluginEvent,
   meta: PluginMeta<PluginInput>
 ) {
-  console.log("Processing event...");
   console.log("Sending to Patterns webhook...");
-  console.log("Success...");
   console.log({ event });
+  console.log("Success...");
 }
