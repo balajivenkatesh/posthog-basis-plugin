@@ -24,14 +24,12 @@ export const onEvent: Plugin<PatternsPluginInput>["onEvent"] = async (
   console.log("Sending to Patterns webhook...", config.webhookUrl);
   //   console.log({ event });
   let response: Response;
-  try {
-    response = await fetch(config.webhookUrl, {
-      method: "POST",
-      body: JSON.stringify(event),
-    });
-  } catch (e) {
-    throw new RetryError("Failed to send event to Patterns webhook.");
-  }
+  response = await fetch(config.webhookUrl, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(event),
+  });
+
   if (response.status != 200) {
     const data = await response.json();
     throw new Error(
