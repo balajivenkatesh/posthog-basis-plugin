@@ -14,7 +14,9 @@ interface PatternsPluginInput extends PluginInput {
 }
 
 // Plugin method that runs on plugin load
-export async function setupPlugin({ config }: Meta<PatternsPluginInput>) {}
+export async function setupPlugin({ config }: Meta<PatternsPluginInput>) {
+  console.log("Loading Patterns app...");
+}
 
 // Plugin method that processes event
 export const onEvent: Plugin<PatternsPluginInput>["onEvent"] = async (
