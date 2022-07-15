@@ -19,26 +19,26 @@ export async function setupPlugin({ config }: Meta<PatternsPluginInput>) {
   console.log("Loaded Patterns app.");
 }
 
-// Plugin method that runs on each new event
-export const onEvent: Plugin<PatternsPluginInput>["onEvent"] = async (
-  event: ProcessedPluginEvent,
-  { config }: Meta<PatternsPluginInput>
-) => {
-  console.log("Sending event to Patterns webhook...");
-  //   console.log({ event });
-  let response: Response;
-  response = await fetch(config.webhookUrl, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(event),
-  });
+// // Plugin method that runs on each new event
+// export const onEvent: Plugin<PatternsPluginInput>["onEvent"] = async (
+//   event: ProcessedPluginEvent,
+//   { config }: Meta<PatternsPluginInput>
+// ) => {
+//   console.log("Sending event to Patterns webhook...");
+//   //   console.log({ event });
+//   let response: Response;
+//   response = await fetch(config.webhookUrl, {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify(event),
+//   });
 
-  if (response.status != 200) {
-    const data = await response.json();
-    throw new RetryError(`Failed to send event: ${JSON.stringify(data)}`);
-  }
-  console.log("Send Success.");
-};
+//   if (response.status != 200) {
+//     const data = await response.json();
+//     throw new RetryError(`Failed to send event: ${JSON.stringify(data)}`);
+//   }
+//   console.log("Send Success.");
+// };
 
 // Plugin method to export events
 export const exportEvents: Plugin<PatternsPluginInput>["exportEvents"] = async (
