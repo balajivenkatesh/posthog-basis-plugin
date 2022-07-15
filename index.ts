@@ -35,7 +35,7 @@ export const onEvent: Plugin<PatternsPluginInput>["onEvent"] = async (
 
   if (response.status != 200) {
     const data = await response.json();
-    throw new Error(
+    throw new RetryError(
       `Failed to send event to Patterns: ${JSON.stringify(data)}`
     );
   }
@@ -58,7 +58,7 @@ export const exportEvents: Plugin<PatternsPluginInput>["exportEvents"] = async (
 
   if (response.status != 200) {
     const data = await response.json();
-    throw new Error(
+    throw new RetryError(
       `Failed to send event to Patterns: ${JSON.stringify(data)}`
     );
   }
