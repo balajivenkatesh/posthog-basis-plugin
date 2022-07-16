@@ -2,11 +2,11 @@
 
 Send event data to a webhook endpoint in a [patterns.app](https://patterns.app/) graph.
 
-![Patterns Graph Webhook](patterns_graph_webhook.png)
-
 ## Installation
 
-- Install Patterns app from PostHog.
+- Create a graph in Patterns and add a webhook node in it. ![Patterns Graph Webhook](patterns_graph_webhook.png)
+- Copy the webhook URL from the sidebar.
+- Install Patterns app from PostHog. Paste the URL in "Patterns Webhook URL" during app configuration.
 
 ## We'd love to connect
 
