@@ -1,7 +1,6 @@
 import {
   PluginInput,
   Plugin,
-  ProcessedPluginEvent,
   Meta,
   RetryError,
   PluginEvent,
